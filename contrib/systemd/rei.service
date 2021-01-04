@@ -1,0 +1,12 @@
+[Unit]
+Description=Rei X Hotkey Daemon
+Documentation=man:rei(1)
+BindsTo=display-manager.service
+After=display-manager.service
+
+[Service]
+ExecStart=/usr/bin/rei
+ExecReload=/usr/bin/kill -SIGUSR1 $MAINPID
+
+[Install]
+WantedBy=graphical.target
